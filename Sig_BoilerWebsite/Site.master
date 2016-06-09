@@ -20,8 +20,8 @@
         <link rel="stylesheet" href="/styles/app.skins.css"/>
         <!-- endbuild -->
     </head>
-    <body class="page-loading">
-        <form runat="server">
+    <body>
+        <form runat="server" class="page-loading">
 
             <!-- SM -->
             <asp:ScriptManager runat="server">
@@ -69,22 +69,23 @@
                     <!-- /BRAND -->
 
                     <!-- QUICK LUANCH -->
-                    <ul class="quick-launch-apps hide">                       
+                    <ul class="quick-launch-apps hide">        
+                                       
                     </ul>
                     <!-- /QUICK LUANCH -->
 
                     <!-- main navigation -->
                     <nav role="navigation">
-                    <ul class="nav">
-                        <!-- dashboard -->
-                        <li>
-                        <a href="/default.aspx">
-                            <i class="icon-compass"></i>
-                            <span>Dashboard</span>
-                        </a>
-                        </li>
-                        <!-- /dashboard -->
-                    </ul>
+                        <ul class="nav">
+                            <!-- dashboard -->
+                            <li>
+                                <a href="/default.aspx">
+                                    <i class="icon-compass"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <!-- /dashboard -->
+                        </ul>
                     </nav>
                     <!-- /main navigation -->
 
@@ -96,37 +97,37 @@
 
                     <!-- top header -->
                     <div class="header navbar">
-                    <div class="brand visible-xs">
-                        <!-- toggle offscreen menu -->
-                        <div class="toggle-offscreen">
-                        <a href="javascript:;" class="hamburger-icon visible-xs" data-toggle="offscreen" data-move="ltr">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
+                        <div class="brand visible-xs">
+                            <!-- toggle offscreen menu -->
+                            <div class="toggle-offscreen">
+                                <a href="javascript:;" class="hamburger-icon visible-xs" data-toggle="offscreen" data-move="ltr">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                            <!-- /toggle offscreen menu -->
+                            <!-- logo -->
+                            <a class="brand-logo">
+                                <span>SF</span>
+                            </a>
+                            <!-- /logo -->
                         </div>
-                        <!-- /toggle offscreen menu -->
-                        <!-- logo -->
-                        <a class="brand-logo">
-                        <span>SF</span>
-                        </a>
-                        <!-- /logo -->
-                    </div>
-                    <ul class="nav navbar-nav hidden-xs">
-                        <li>
-                        <a href="javascript:;" class="small-sidebar-toggle ripple" data-toggle="layout-small-menu">
-                            <i class="icon-toggle-sidebar"></i>
-                        </a>
-                        </li>
+                        <ul class="nav navbar-nav hidden-xs">
+                            <li>
+                            <a href="javascript:;" class="small-sidebar-toggle ripple" data-toggle="layout-small-menu">
+                                <i class="icon-toggle-sidebar"></i>
+                            </a>
+                            </li>
 
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right hidden-xs">
-                        <li>
-                        <a href="javascript:;" class="ripple">
-                            <i class="icon-user"></i>
-                        </a>
-                        </li>
-                    </ul>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right hidden-xs">
+                            <li>
+                                <a href="javascript:;" class="ripple">
+                                    <i class="icon-user"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <!-- /top header -->
 
@@ -144,36 +145,36 @@
 
                     <!-- Right -->
                     <nav class="footer-right">
-                    <ul class="nav">
-                      <li>
-                        <a href="javascript:;">Feedback</a>
-                      </li>
-                      <li>
-                        <a href="javascript:;" class="scroll-up">
-                          <i class="fa fa-angle-up"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
+                        <ul class="nav">
+                            <li>
+                                <a href="javascript:;">Feedback</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="scroll-up">
+                                    <i class="fa fa-angle-up"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                     <!-- /Right -->
 
                     <!-- Left -->
                     <nav class="footer-left hidden-xs">
-                    <ul class="nav">
-                      <li>
-                        <a href="javascript:;"><span>About</span> SF</a>
-                      </li>
-                      <li>
-                        <a href="javascript:;">Privacy</a>
-                      </li>
-                      <li>
-                        <a href="javascript:;">Terms</a>
-                      </li>
-                      <li>
-                        <a href="javascript:;">Help</a>
-                      </li>
-                    </ul>
-                  </nav>
+                        <ul class="nav">
+                            <li>
+                            <   a href="javascript:;"><span>About</span> SF</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Terms</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Help</a>
+                            </li>
+                        </ul>
+                    </nav>
                     <!-- /Left -->
 
                 </footer>
