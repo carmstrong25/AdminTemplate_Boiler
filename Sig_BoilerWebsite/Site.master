@@ -1,0 +1,199 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!doctype html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+    <head runat="server">
+        <meta charset="utf-8"/>
+        <title>*TITLE* CHANGE ME</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"/>
+        <!-- build:css({.tmp,app}) styles/app.min.css -->
+        <link rel="stylesheet" href="/styles/webfont.css"/>
+        <link rel="stylesheet" href="/styles/climacons-font.css"/>
+        <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/styles/font-awesome.css"/>
+        <link rel="stylesheet" href="/styles/card.css"/>
+        <link rel="stylesheet" href="/styles/sli.css"/>
+        <link rel="stylesheet" href="/styles/animate.css"/>
+        <link rel="stylesheet" href="/styles/app.css"/>
+        <link rel="stylesheet" href="/styles/app.skins.css"/>
+        <!-- endbuild -->
+    </head>
+    <body class="page-loading">
+        <form runat="server">
+
+            <!-- SM -->
+            <asp:ScriptManager runat="server">
+
+            </asp:ScriptManager>
+            <!-- /SM -->
+
+            <!-- page loading spinner -->
+            <div class="pageload">
+                <div class="pageload-inner">
+                    <div class="sk-rotating-plane"></div>
+                </div>
+            </div>
+            <!-- /page loading spinner -->
+
+            <!-- APP -->
+            <div class="app layout-fixed-header" style="height:100vh;">
+
+                <!-- sidebar panel -->
+                <div class="sidebar-panel offscreen-left">
+
+                    <!-- BRAND -->
+                    <div class="brand">
+                        <!-- toggle small sidebar menu -->
+                        <a href="javascript:;" class="toggle-apps hidden-xs" data-toggle="quick-launch">
+                            <i class="icon-grid"></i>
+                        </a>
+                        <!-- /toggle small sidebar menu -->
+                        <!-- toggle offscreen menu -->
+                        <div class="toggle-offscreen">
+                            <a href="javascript:;" class="visible-xs hamburger-icon" data-toggle="offscreen" data-move="ltr">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            </a>
+                        </div>
+                        <!-- /toggle offscreen menu -->
+                        <!-- logo -->
+                        <a class="brand-logo">
+                            <span>SF Boiler</span>
+                        </a>
+                        <a href="#" class="small-menu-visible brand-logo">SF</a>
+                        <!-- /logo -->
+                    </div>
+                    <!-- /BRAND -->
+
+                    <!-- QUICK LUANCH -->
+                    <ul class="quick-launch-apps hide">                       
+                    </ul>
+                    <!-- /QUICK LUANCH -->
+
+                    <!-- main navigation -->
+                    <nav role="navigation">
+                    <ul class="nav">
+                        <!-- dashboard -->
+                        <li>
+                        <a href="/default.aspx">
+                            <i class="icon-compass"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        </li>
+                        <!-- /dashboard -->
+                    </ul>
+                    </nav>
+                    <!-- /main navigation -->
+
+                </div>
+                <!-- /sidebar panel -->
+
+                <!-- MAIN -->
+                <div class="main-panel">
+
+                    <!-- top header -->
+                    <div class="header navbar">
+                    <div class="brand visible-xs">
+                        <!-- toggle offscreen menu -->
+                        <div class="toggle-offscreen">
+                        <a href="javascript:;" class="hamburger-icon visible-xs" data-toggle="offscreen" data-move="ltr">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        </div>
+                        <!-- /toggle offscreen menu -->
+                        <!-- logo -->
+                        <a class="brand-logo">
+                        <span>SF</span>
+                        </a>
+                        <!-- /logo -->
+                    </div>
+                    <ul class="nav navbar-nav hidden-xs">
+                        <li>
+                        <a href="javascript:;" class="small-sidebar-toggle ripple" data-toggle="layout-small-menu">
+                            <i class="icon-toggle-sidebar"></i>
+                        </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-xs">
+                        <li>
+                        <a href="javascript:;" class="ripple">
+                            <i class="icon-user"></i>
+                        </a>
+                        </li>
+                    </ul>
+                    </div>
+                    <!-- /top header -->
+
+                    <!-- Content -->
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                    <!-- /Content -->
+
+                </div>
+                <!-- /MAIN -->
+
+                <!-- bottom footer -->
+                <footer class="content-footer">
+
+                    <!-- Right -->
+                    <nav class="footer-right">
+                    <ul class="nav">
+                      <li>
+                        <a href="javascript:;">Feedback</a>
+                      </li>
+                      <li>
+                        <a href="javascript:;" class="scroll-up">
+                          <i class="fa fa-angle-up"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                    <!-- /Right -->
+
+                    <!-- Left -->
+                    <nav class="footer-left hidden-xs">
+                    <ul class="nav">
+                      <li>
+                        <a href="javascript:;"><span>About</span> SF</a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">Privacy</a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">Terms</a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">Help</a>
+                      </li>
+                    </ul>
+                  </nav>
+                    <!-- /Left -->
+
+                </footer>
+                <!-- /bottom footer -->
+
+            </div>
+            <!-- APP -->
+
+            <!-- build:js({.tmp,app}) scripts/app.min.js -->
+            <script src="/scripts/helpers/modernizr.js"></script>
+            <script src="/vendor/jquery/dist/jquery.js"></script>
+            <script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="/vendor/fastclick/lib/fastclick.js"></script>
+            <script src="/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+            <script src="/scripts/helpers/smartresize.js"></script>
+            <script src="/scripts/constants.js"></script>
+            <script src="/scripts/main.js"></script>
+            <!-- endbuild -->
+
+        </form>
+
+    </body>
+</html>

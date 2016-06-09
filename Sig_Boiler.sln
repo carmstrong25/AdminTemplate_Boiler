@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sig_BoilerSystem", "Sig_BoilerSystem\Sig_BoilerSystem.csproj", "{5A14B18B-88F2-4165-8FD3-8FA5C56ED99E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sig_BoilerWebsite", "http://localhost:60286", "{06093485-3FC8-47A9-87A4-CB00E5B6F1D1}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60286"
+		Debug.AspNetCompiler.PhysicalPath = "Sig_BoilerWebsite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60286\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60286"
+		Release.AspNetCompiler.PhysicalPath = "Sig_BoilerWebsite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60286\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Sig_BoilerWebsite\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A14B18B-88F2-4165-8FD3-8FA5C56ED99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A14B18B-88F2-4165-8FD3-8FA5C56ED99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A14B18B-88F2-4165-8FD3-8FA5C56ED99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A14B18B-88F2-4165-8FD3-8FA5C56ED99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06093485-3FC8-47A9-87A4-CB00E5B6F1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06093485-3FC8-47A9-87A4-CB00E5B6F1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06093485-3FC8-47A9-87A4-CB00E5B6F1D1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{06093485-3FC8-47A9-87A4-CB00E5B6F1D1}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
