@@ -2,7 +2,10 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
     <div class="main-content">
-
+        <div class="page-title">
+            <div class="title">SF Boiler</div>
+            <div class="sub-title">Home Page</div>
+        </div>
     </div>
 </asp:Content>
 
