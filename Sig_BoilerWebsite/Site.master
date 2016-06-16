@@ -210,7 +210,7 @@
                 </div>
                 <!-- /MAIN -->
 
-                <!-- bottom footer -->
+<%--                <!-- bottom footer -->
                 <footer class="content-footer">
 
                     <!-- Right -->
@@ -248,7 +248,7 @@
                     <!-- /Left -->
 
                 </footer>
-                <!-- /bottom footer -->
+                <!-- /bottom footer -->--%>
 
             </div>
             <!-- APP -->
@@ -262,6 +262,8 @@
             <script src="/scripts/helpers/smartresize.js"></script>
             <script src="/scripts/constants.js"></script>
             <script src="/scripts/main.js"></script>
+            <script src="/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+            <script src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
             <!-- endbuild -->
         </form>
 

@@ -48,9 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DevControllers\Dev_Controller2.cs" />
+    <Compile Include="BLL\DevControllers\Dev_Controller1.cs" />
     <Compile Include="BLL\Page_Controller.cs" />
     <Compile Include="BLL\Group_Controller.cs" />
     <Compile Include="BLL\UserManagement_Controller.cs" />
+    <Compile Include="BLL\Validator_Controller.cs" />
     <Compile Include="DAL\BoilerContext.cs" />
     <Compile Include="DAL\DTOs\DummyREMOVE.cs" />
     <Compile Include="DAL\Entities\Group.cs" />
@@ -59,6 +62,7 @@
     <Compile Include="DAL\Entities\Model1.cs" />
     <Compile Include="DAL\Entities\Page.cs" />
     <Compile Include="DAL\Entities\User.cs" />
+    <Compile Include="DAL\gvar.cs" />
     <Compile Include="DAL\POCOs\List_defaults\List_GroupPage.cs" />
     <Compile Include="DAL\POCOs\List_defaults\List_Groups.cs" />
     <Compile Include="DAL\POCOs\List_defaults\List_GroupUser.cs" />

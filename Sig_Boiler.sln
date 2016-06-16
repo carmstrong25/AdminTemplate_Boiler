@@ -9,6 +9,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sig_BoilerWebsite", "http:/
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{5a14b18b-88f2-4165-8fd3-8fa5c56ed99e}|Sig_BoilerSystem.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_60286"
 		Debug.AspNetCompiler.PhysicalPath = "Sig_BoilerWebsite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60286\"
