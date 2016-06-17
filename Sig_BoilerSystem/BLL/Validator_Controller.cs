@@ -24,7 +24,8 @@ namespace Sig_BoilerSystem.BLL
             //2. BOOL
             //3. DECIMAL
             //4. DATETIME
-            //6.
+            //5. Required
+            //6. Range
             //7.
             //8.
             //9.
@@ -75,7 +76,7 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
-            //Generic DateTime Valdation
+            //Generic Required Valdation
             if (item.ValidationType == 5)
             {
                 error = "This field is required.";
@@ -84,7 +85,31 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
-
+            //Generic Range Valdation
+            if (item.ValidationType == 6)
+            {
+                //Must come in as int.
+                //Param1: Small Value.
+                //Parsm2: Big Value
+                int val = int.Parse(item.Value.ToString());
+                error = "This field does not meet the range contraints.";
+                if (val >= item.Param1 && val <= item.Param2)
+                {
+                    returnValue.Validated = true;
+                }
+            }
+            //Generic Lenght Valdation
+            if (item.ValidationType == 7)
+            {
+                //Param1: lenght.
+                string val = item.Value.ToString();
+                error = "This field does not meet the lenght contraints.";
+                if (val.Length <= item.Param1)
+                {
+                    returnValue.Validated = true;
+                }
+            }
+          
             if(returnValue.Validated == false)
             {
                 returnValue.Message = error;

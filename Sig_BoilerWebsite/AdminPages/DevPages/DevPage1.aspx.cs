@@ -30,52 +30,87 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             gvar boolValue = new gvar();
             gvar decimalValue = new gvar();
             gvar datetimeValue = new gvar();
+            gvar rangeValue = new gvar();
+            gvar lenghtValue = new gvar();
 
             #region txt_int
             intValue.Value = txt_int.Text;
-            intValue.ValidationType = 5;
+            intValue.ValidationType = 5; // required
             intValue.Control = "txt_int";
             allVars.Add(gval.validate(intValue));
             if (intValue.Validated == true)
             {
-                intValue.ValidationType = 1;
+                intValue.ValidationType = 1; // int 
                 allVars.Add(gval.validate(intValue));
             }
             #endregion
 
             #region txt_bool
             boolValue.Value = txt_bool.Text;
-            boolValue.ValidationType = 5;
+            boolValue.ValidationType = 5; // required
             boolValue.Control = "txt_bool";
             allVars.Add(gval.validate(boolValue));
             if (boolValue.Validated == true)
             {
-                boolValue.ValidationType = 2;
+                boolValue.ValidationType = 2; // bool
                 allVars.Add(gval.validate(boolValue));
             }
             #endregion
 
             #region txt_decimal
             decimalValue.Value = txt_decimal.Text;
-            decimalValue.ValidationType = 5;
+            decimalValue.ValidationType = 5; // reqired
             decimalValue.Control = "txt_decimal";
             allVars.Add(gval.validate(decimalValue));
             if (decimalValue.Validated == true)
             {
-                decimalValue.ValidationType = 3;
+                decimalValue.ValidationType = 3; // decimal
                 allVars.Add(gval.validate(decimalValue));
             }
             #endregion
 
             #region txt_datetime
             datetimeValue.Value = txt_datetime.Text;
-            datetimeValue.ValidationType = 5;
+            datetimeValue.ValidationType = 5; // required
             datetimeValue.Control = "txt_datetime";
             allVars.Add(gval.validate(datetimeValue));
             if (datetimeValue.Validated == true)
             {
-                datetimeValue.ValidationType = 4;
+                datetimeValue.ValidationType = 4; // DateTime
                 allVars.Add(gval.validate(datetimeValue));
+            }
+            #endregion
+
+            #region txt_range
+            rangeValue.Value = txt_range.Text;
+            rangeValue.ValidationType = 5; // required
+            rangeValue.Control = "txt_range";
+            allVars.Add(gval.validate(rangeValue));
+            if (rangeValue.Validated == true)
+            {
+                rangeValue.ValidationType = 1; // int check
+                allVars.Add(gval.validate(rangeValue));
+            }
+            if (rangeValue.Validated == true)
+            {
+                rangeValue.ValidationType = 6; // range check
+                rangeValue.Param1 = 5;
+                rangeValue.Param2 = 10;
+                allVars.Add(gval.validate(rangeValue));
+            }
+            #endregion
+
+            #region txt_lenght
+            //This one doesn't need to check if int.
+            lenghtValue.Value = txt_lenght.Text;
+            lenghtValue.ValidationType = 5; // required
+            lenghtValue.Control = "txt_lenght";
+            allVars.Add(gval.validate(lenghtValue));
+            if (lenghtValue.Validated == true)
+            {
+                lenghtValue.ValidationType = 7; // lenght check
+                lenghtValue.Param1 = 5;
+                allVars.Add(gval.validate(lenghtValue));
             }
             #endregion
 
@@ -102,7 +137,10 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
 
             if (failed != true)
             {
-                //success
+                //success call your BLL from here
+                //int invalue = int.parse(intValue);
+                //bool update = Controller.update(intvalue);
+                //and so on.
             }
             else
             {

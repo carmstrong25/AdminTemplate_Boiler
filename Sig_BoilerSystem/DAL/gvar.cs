@@ -24,5 +24,7 @@ namespace Sig_BoilerSystem.DAL
         public bool Validated { get; set; }
         public string Control { get; set; }
         public string Message { get; set; }
+        public int Param1 { get; set; }
+        public int Param2 { get; set; }
     }
 }
