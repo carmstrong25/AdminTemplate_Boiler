@@ -17,6 +17,47 @@ namespace Sig_BoilerSystem.BLL
 {
     public class UserManagement_Controller
     {
+        public bool AddNewUser(User newuser)
+        {
+            try
+            {
+                using (var context = new BoilerContext())
+                {
+                    User newUser = null;
+                    newUser = context.Users.Add(newuser);
+                    
+                    context.SaveChanges();
+                }
+                return true;
+            }
+           catch(Exception e)
+            {
+                //ALERT ("e.innerMSG")
+                return false;
+            }
+        }
+        public bool UpdateUser(List<string> user)
+        {
+            try
+            {
+                using (var context = new BoilerContext())
+                {
+                    var find = context.Users.Find(id);
+                    
+
+                    var update = context.Entry(context.Users.Attach(find));
+                    update.Property(x => x.FirstName).IsModified = true;
+
+                    context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                //ALERT ("e.innerMSG")
+                return false;
+            }
+        }
 
     }
 }
