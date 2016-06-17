@@ -61,6 +61,7 @@
     <Compile Include="DAL\Entities\GroupUser.cs" />
     <Compile Include="DAL\Entities\Model1.cs" />
     <Compile Include="DAL\Entities\Page.cs" />
+    <Compile Include="DAL\Entities\sysdiagram.cs" />
     <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="DAL\gvar.cs" />
     <Compile Include="DAL\POCOs\List_defaults\List_GroupPage.cs" />

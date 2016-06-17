@@ -13,12 +13,11 @@ namespace Sig_BoilerSystem.DAL.Entities
             GroupPages = new HashSet<GroupPage>();
         }
 
-        [Key]
-        public int PagesID { get; set; }
+        public int PageID { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Description { get; set; }
+        public string PageName { get; set; }
 
         public virtual ICollection<GroupPage> GroupPages { get; set; }
     }

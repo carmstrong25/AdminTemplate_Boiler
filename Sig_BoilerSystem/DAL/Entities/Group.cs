@@ -10,20 +10,17 @@ namespace Sig_BoilerSystem.DAL.Entities
     {
         public Group()
         {
+            GroupPages = new HashSet<GroupPage>();
             GroupUsers = new HashSet<GroupUser>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserID { get; set; }
+        public int GroupID { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Username { get; set; }
+        public string GroupName { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int GroupID { get; set; }
-
-        public virtual GroupPage GroupPage { get; set; }
+        public virtual ICollection<GroupPage> GroupPages { get; set; }
 
         public virtual ICollection<GroupUser> GroupUsers { get; set; }
     }

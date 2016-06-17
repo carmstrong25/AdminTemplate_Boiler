@@ -10,9 +10,9 @@ namespace Sig_BoilerSystem.DAL.POCOs
     {
         public int GroupUserID { get; set; }
 
-        public int UserID { get; set; }
-
         public int GroupID { get; set; }
+
+        public int UserID { get; set; }
 
     }
 }

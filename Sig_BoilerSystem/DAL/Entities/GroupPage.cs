@@ -9,13 +9,14 @@ namespace Sig_BoilerSystem.DAL.Entities
     public partial class GroupPage
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int GroupPagesID { get; set; }
+
         public int GroupID { get; set; }
 
         public int PageID { get; set; }
 
-        public virtual Page Page { get; set; }
-
         public virtual Group Group { get; set; }
+
+        public virtual Page Page { get; set; }
     }
 }
