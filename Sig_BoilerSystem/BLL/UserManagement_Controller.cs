@@ -36,13 +36,13 @@ namespace Sig_BoilerSystem.BLL
                 return false;
             }
         }
-        public bool UpdateUser(List<string> user)
+        public bool UpdateUser(User user)
         {
             try
             {
                 using (var context = new BoilerContext())
                 {
-                    var find = context.Users.Find(id);
+                    var find = context.Users.Find(user);
                     
 
                     var update = context.Entry(context.Users.Attach(find));

@@ -24,6 +24,7 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
     {
         try
         {
+            #region Validation
             Validator_Controller gval = new Validator_Controller();
             List<gvar> allVars = new List<gvar>();
             gvar intValue = new gvar();
@@ -32,85 +33,99 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             gvar datetimeValue = new gvar();
             gvar rangeValue = new gvar();
             gvar lenghtValue = new gvar();
+            gvar passwordValue = new gvar();
+            gvar lettersValue = new gvar();
 
             #region txt_int
-            intValue.Value = txt_int.Text;
-            intValue.ValidationType = 5; // required
-            intValue.Control = "txt_int";
-            allVars.Add(gval.validate(intValue));
+            intValue = gval.validate(txt_int.Text, 5, "txt_int", 0, 0, ""); // Control.Text, ValidationType, ControlID, Param1(int), Param2(int), Param3(string)
+            allVars.Add(intValue);
             if (intValue.Validated == true)
             {
-                intValue.ValidationType = 1; // int 
-                allVars.Add(gval.validate(intValue));
+                intValue = gval.validate(txt_int.Text, 1, "txt_int", 0, 0, "");
+                allVars.Add(intValue);
             }
             #endregion
 
             #region txt_bool
-            boolValue.Value = txt_bool.Text;
-            boolValue.ValidationType = 5; // required
-            boolValue.Control = "txt_bool";
-            allVars.Add(gval.validate(boolValue));
+            boolValue = gval.validate(txt_bool.Text, 5, "txt_bool", 0, 0, "");
+            allVars.Add(boolValue);
             if (boolValue.Validated == true)
             {
-                boolValue.ValidationType = 2; // bool
-                allVars.Add(gval.validate(boolValue));
+                boolValue = gval.validate(txt_bool.Text, 2, "txt_bool", 0, 0, "");
+                allVars.Add(boolValue);
             }
             #endregion
 
             #region txt_decimal
-            decimalValue.Value = txt_decimal.Text;
-            decimalValue.ValidationType = 5; // reqired
-            decimalValue.Control = "txt_decimal";
-            allVars.Add(gval.validate(decimalValue));
+            decimalValue = gval.validate(txt_decimal.Text, 5, "txt_decimal", 0, 0, "");
+            allVars.Add(decimalValue);
             if (decimalValue.Validated == true)
             {
-                decimalValue.ValidationType = 3; // decimal
-                allVars.Add(gval.validate(decimalValue));
+                decimalValue = gval.validate(txt_decimal.Text, 3, "txt_decimal", 0, 0, "");
+                allVars.Add(decimalValue);
             }
             #endregion
 
             #region txt_datetime
-            datetimeValue.Value = txt_datetime.Text;
-            datetimeValue.ValidationType = 5; // required
-            datetimeValue.Control = "txt_datetime";
-            allVars.Add(gval.validate(datetimeValue));
+            datetimeValue = gval.validate(txt_datetime.Text, 5, "txt_datetime", 0, 0, "");
+            allVars.Add(datetimeValue);
             if (datetimeValue.Validated == true)
             {
-                datetimeValue.ValidationType = 4; // DateTime
-                allVars.Add(gval.validate(datetimeValue));
+                datetimeValue = gval.validate(txt_datetime.Text, 4, "txt_datetime", 0, 0, "");
+                allVars.Add(datetimeValue);
             }
             #endregion
 
             #region txt_range
-            rangeValue.Value = txt_range.Text;
-            rangeValue.ValidationType = 5; // required
-            rangeValue.Control = "txt_range";
-            allVars.Add(gval.validate(rangeValue));
+            rangeValue = gval.validate(txt_range.Text, 5, "txt_range", 0, 0, "");
+            allVars.Add(rangeValue);
             if (rangeValue.Validated == true)
             {
-                rangeValue.ValidationType = 1; // int check
-                allVars.Add(gval.validate(rangeValue));
+                rangeValue = gval.validate(txt_range.Text, 1, "txt_range", 0, 0, "");
+                allVars.Add(rangeValue);
             }
             if (rangeValue.Validated == true)
             {
-                rangeValue.ValidationType = 6; // range check
-                rangeValue.Param1 = 5;
-                rangeValue.Param2 = 10;
-                allVars.Add(gval.validate(rangeValue));
+                rangeValue = gval.validate(txt_range.Text, 6, "txt_range", 5, 10, "");
+                allVars.Add(rangeValue);
             }
             #endregion
 
             #region txt_lenght
             //This one doesn't need to check if int.
-            lenghtValue.Value = txt_lenght.Text;
-            lenghtValue.ValidationType = 5; // required
-            lenghtValue.Control = "txt_lenght";
-            allVars.Add(gval.validate(lenghtValue));
+            lenghtValue = gval.validate(txt_lenght.Text, 5, "txt_lenght", 0, 0, ""); 
+            allVars.Add(lenghtValue);
             if (lenghtValue.Validated == true)
             {
-                lenghtValue.ValidationType = 7; // lenght check
-                lenghtValue.Param1 = 5;
-                allVars.Add(gval.validate(lenghtValue));
+                lenghtValue = gval.validate(txt_lenght.Text, 7, "txt_lenght", 5, 2, "");
+                allVars.Add(lenghtValue);
+            }
+            #endregion
+
+            #region txt_password
+            passwordValue = gval.validate(txt_password.Text, 5, "txt_password", 0, 0, "");
+            allVars.Add(passwordValue);
+            if(passwordValue.Validated == true)
+            {
+                passwordValue = gval.validate(txt_password_confrimation.Text, 5, "txt_password_confrimation", 0, 0, "");
+                allVars.Add(passwordValue);
+                if (passwordValue.Validated == true)
+                {
+                    passwordValue = gval.validate(txt_password.Text, 8, "txt_password", 2, 0, txt_password_confrimation.Text);
+                    allVars.Add(passwordValue);
+                }
+            }
+
+           
+            #endregion
+
+            #region txt_letters
+            lettersValue = gval.validate(txt_letters.Text, 5, "txt_letters", 0, 0, "");
+            allVars.Add(lettersValue);
+            if (lettersValue.Validated == true)
+            {
+                lettersValue = gval.validate(txt_letters.Text, 9, "txt_letters", 0, 0, "");
+                allVars.Add(lettersValue);
             }
             #endregion
 
@@ -133,6 +148,7 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
                     lb.Text = "";
                 }
             }
+            #endregion
             #endregion
 
             if (failed != true)

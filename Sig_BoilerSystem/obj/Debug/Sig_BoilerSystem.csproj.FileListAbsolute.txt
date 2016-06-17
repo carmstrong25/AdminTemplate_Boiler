@@ -13,3 +13,8 @@ C:\Users\carmstrong\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\bin\Debug\Entit
 C:\Users\carmstrong\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\obj\Debug\Sig_BoilerSystem.csprojResolveAssemblyReference.cache
 C:\Users\carmstrong\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\obj\Debug\Sig_BoilerSystem.dll
 C:\Users\carmstrong\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\obj\Debug\Sig_BoilerSystem.pdb
+C:\Users\cengl\OneDrive\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\bin\Debug\Sig_BoilerSystem.dll.config
+C:\Users\cengl\OneDrive\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\bin\Debug\EntityFramework.dll
+C:\Users\cengl\OneDrive\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cengl\OneDrive\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\bin\Debug\EntityFramework.xml
+C:\Users\cengl\OneDrive\Documents\GitHub\Sig_Boiler\Sig_BoilerSystem\bin\Debug\EntityFramework.SqlServer.xml

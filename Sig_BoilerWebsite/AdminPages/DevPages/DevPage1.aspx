@@ -26,7 +26,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label" >Int: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_int" placeholder="Must Be INT" />
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_int" placeholder="Must be INT." />
                                                 <asp:label runat="server" id="val_txt_int" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
@@ -36,7 +36,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">Bool: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_bool" placeholder="Must Be True / False" />
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_bool" placeholder="Must be True / False." />
                                                 <asp:label runat="server" id="val_txt_bool" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
@@ -46,7 +46,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">Decimal: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_decimal" placeholder="Must Be DECIMAL" />
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_decimal" placeholder="Must be DECIMAL." />
                                                 <asp:label runat="server" id="val_txt_decimal" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">DateTime: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" class="form-control" data-provide="datepicker" id="txt_datetime" placeholder="Must Be DATETIME"/>
+                                                <asp:TextBox runat="server" class="form-control" data-provide="datepicker" id="txt_datetime" placeholder="Must be DATETIME."/>
                                                 <asp:label runat="server" id="val_txt_datetime" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
@@ -66,24 +66,54 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label" >Range: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_range"  placeholder="Must Be Between 5 - 10"/>
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_range"  placeholder="Must be between 5 - 10."/>
                                                 <asp:label runat="server" id="val_txt_range" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
                                         <!-- Range -->
 
-                                        <!-- Range -->
+                                        <!-- Lenght -->
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label" >Lenght: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_lenght"  placeholder="Must Be Between less than 5 characters."/>
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_lenght"  placeholder="Must be between less than 5 characters."/>
                                                 <asp:label runat="server" id="val_txt_lenght" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
-                                        <!-- Range -->
-                                        <br />
-                                        <hr />
-                                        <br />
+                                        <!-- Lenght -->
+
+                                        <!-- Password -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Password: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_password"  placeholder="Must match the password confirmation."/>
+                                                <asp:label runat="server" id="val_txt_password" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- Password -->
+
+                                        <!-- PasswordConfirmation -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Password Confirmation: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_password_confrimation"  placeholder="Must match the password."/>
+                                                <asp:label runat="server" id="val_txt_password_confrimation" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- PasswordConfirmation -->
+
+                                        <!-- PasswordConfirmation -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Only Letters: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_letters"  placeholder="Must be only letters.."/>
+                                                <asp:label runat="server" id="val_txt_letters" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- PasswordConfirmation -->
+
+                                        <br /> <hr /><br />
+
                                         <asp:Button runat="server" CssClass="btn btn-dark pull-right" ID="btn_submit" OnClick="btn_submit_Click" Text="GO GO GO!"/>
                                     </ContentTemplate>
                                     <Triggers>

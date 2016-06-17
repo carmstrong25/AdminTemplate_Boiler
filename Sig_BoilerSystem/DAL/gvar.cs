@@ -26,5 +26,6 @@ namespace Sig_BoilerSystem.DAL
         public string Message { get; set; }
         public int Param1 { get; set; }
         public int Param2 { get; set; }
+        public string Param3 { get; set; }
     }
 }
