@@ -8,6 +8,10 @@ namespace Sig_BoilerSystem.DAL.POCOs
 {
     public class List_GroupPage
     {
+        public int GroupPagesID { get; set; }
 
+        public int GroupID { get; set; }
+
+        public int PageID { get; set; }
     }
 }

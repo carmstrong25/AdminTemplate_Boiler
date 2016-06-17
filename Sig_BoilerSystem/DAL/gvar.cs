@@ -12,9 +12,9 @@ namespace Sig_BoilerSystem.DAL
         //2. BOOL
         //3. DECIMAL
         //4. DATETIME
-        //5.
-        //6.
-        //7.
+        //5. Required
+        //6. Range
+        //7. Lenght
         //8.
         //9.
         //10.

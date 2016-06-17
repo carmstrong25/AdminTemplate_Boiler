@@ -11,7 +11,7 @@ namespace Sig_BoilerSystem.DAL
     class BoilerContext : DbContext
     {
         public BoilerContext()
-            : base("name=lsdb")
+            : base("name=sigdb")
         {
 
         }
@@ -23,33 +23,28 @@ namespace Sig_BoilerSystem.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GroupPage>()
-                .HasOptional(e => e.Group)
-                .WithRequired(e => e.GroupPage);
+            modelBuilder.Entity<Group>()
+                .Property(e => e.GroupName)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Group>()
-                .Property(e => e.Username)
-                .IsUnicode(false);
+                .HasMany(e => e.GroupPages)
+                .WithRequired(e => e.Group)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Group>()
                 .HasMany(e => e.GroupUsers)
                 .WithRequired(e => e.Group)
-                .HasForeignKey(e => e.UserID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Page>()
-                .Property(e => e.Description)
+                .Property(e => e.PageName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Page>()
                 .HasMany(e => e.GroupPages)
                 .WithRequired(e => e.Page)
-                .HasForeignKey(e => e.PageID)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.AccountType)
-                .IsUnicode(false);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.FirstName)
@@ -64,21 +59,26 @@ namespace Sig_BoilerSystem.DAL
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.Email)
+                .Property(e => e.Phone)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.Passhash)
+                .Property(e => e.PassHash)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.SecSalt)
+                .Property(e => e.SecSal)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.GroupUsers)
+                .WithRequired(e => e.User)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Users1)
                 .WithRequired(e => e.User1)
-                .HasForeignKey(e => e.CreatedByID);
+                .HasForeignKey(e => e.CreatedBy);
         }
     }
 }

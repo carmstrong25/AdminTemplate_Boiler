@@ -8,8 +8,8 @@ namespace Sig_BoilerSystem.DAL.POCOs.List_defaults
 {
     public class List_Page
     {
-        public int PagesID { get; set; }
+        public int PageID { get; set; }
 
-        public string Description { get; set; }
+        public string PageName { get; set; }
     }
 }

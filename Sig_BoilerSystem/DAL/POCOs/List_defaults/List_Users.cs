@@ -10,24 +10,22 @@ namespace Sig_BoilerSystem.DAL.POCOs
     {
         public int UserID { get; set; }
 
-        public string AccountType { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
         public string Username { get; set; }
 
-        public string Email { get; set; }
+        public string Phone { get; set; }
 
-        public int Phone { get; set; }
+        public string PassHash { get; set; }
 
-        public string Passhash { get; set; }
-
-        public string SecSalt { get; set; }
+        public string SecSal { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
-        public int CreatedByID { get; set; }
+        public int CreatedBy { get; set; }
+
+        public bool Recovery { get; set; }
     }
 }

@@ -26,17 +26,20 @@ namespace Sig_BoilerSystem.BLL
             //4. DATETIME
             //5. Required
             //6. Range
-            //7.
+            //7. Lenght
             //8.
             //9.
             //10.
             #endregion
+
             gvar returnValue = new gvar();
             returnValue = item;
             returnValue.Validated = false;
             returnValue.Control = item.Control;
             string error = "";
+
             //Generic Int Valdation
+            #region INT            
             if (item.ValidationType == 1)
             {
                 error = "This field requires a number only.";
@@ -46,7 +49,9 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
+            #endregion
             //Generic Bool Valdation
+            #region Bool
             if (item.ValidationType == 2)
             {
                 error = "This field requires a true or false only.";
@@ -56,7 +61,9 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
+            #endregion
             //Generic Decimal Valdation
+            #region Decimal
             if (item.ValidationType == 3)
             {
                 error = "This field requires a number only.";
@@ -66,7 +73,9 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
+            #endregion
             //Generic DateTime Valdation
+            #region DateTime
             if (item.ValidationType == 4)
             {
                 error = "This field requires a date time in the format mm/dd/yyyy.";
@@ -76,7 +85,9 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
+            #endregion
             //Generic Required Valdation
+            #region Required
             if (item.ValidationType == 5)
             {
                 error = "This field is required.";
@@ -85,7 +96,9 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
+            #endregion
             //Generic Range Valdation
+            #region Range
             if (item.ValidationType == 6)
             {
                 //Must come in as int.
@@ -98,7 +111,9 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
+            #endregion
             //Generic Lenght Valdation
+            #region Lenght
             if (item.ValidationType == 7)
             {
                 //Param1: lenght.
@@ -109,8 +124,10 @@ namespace Sig_BoilerSystem.BLL
                     returnValue.Validated = true;
                 }
             }
-          
-            if(returnValue.Validated == false)
+            #endregion
+
+            //set Message if failed
+            if (returnValue.Validated == false)
             {
                 returnValue.Message = error;
             }

@@ -10,14 +10,11 @@ namespace Sig_BoilerSystem.DAL.Entities
     {
         public User()
         {
+            GroupUsers = new HashSet<GroupUser>();
             Users1 = new HashSet<User>();
         }
 
         public int UserID { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string AccountType { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -33,22 +30,23 @@ namespace Sig_BoilerSystem.DAL.Entities
 
         [Required]
         [StringLength(50)]
-        public string Email { get; set; }
-
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Passhash { get; set; }
+        public string PassHash { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string SecSalt { get; set; }
+        public string SecSal { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime CreatedDate { get; set; }
 
-        public int CreatedByID { get; set; }
+        public int CreatedBy { get; set; }
+
+        public bool Recovery { get; set; }
+
+        public virtual ICollection<GroupUser> GroupUsers { get; set; }
 
         public virtual ICollection<User> Users1 { get; set; }
 
