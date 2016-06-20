@@ -22,6 +22,15 @@
                             <div class="col-lg-12">
                                 <asp:UpdatePanel runat="server" ID="up" ChildrenAsTriggers="true">
                                     <ContentTemplate>   
+                                        <!-- Username -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Username: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_username" placeholder="pizzaguy01"/>
+                                                <asp:label runat="server" id="username_availability_result" class="help-block"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- Username -->
 
                                         <!-- int -->
                                         <div class="form-group">
@@ -109,6 +118,16 @@
                                             <div class="col-sm-10">
                                                 <asp:TextBox runat="server" CssClass="form-control" id="txt_letters"  placeholder="Must be only letters.."/>
                                                 <asp:label runat="server" id="val_txt_letters" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- Letters -->
+
+                                        <!-- Letters -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Phone Number: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_phone" placeholder="(999) 999-9999"/>
+                                                <asp:label runat="server" id="val_txt_phone" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
                                         <!-- Letters -->
@@ -257,6 +276,33 @@
                 },
             });
         }
+
+        $(document).ready(function () {
+            //Input Mask for phone number.
+            $("#<%=txt_phone.ClientID%>").mask("(999) 999-9999");
+        });
+
+
+        $(document).ready(function () {
+            $('#<%=txt_username.ClientID%>').focusout(function () {
+                var uname = $('#<%=txt_username.ClientID%>').val()
+
+                var result = checkAvail(uname)
+
+                function checkAvail(uname) {
+                    PageMethods.CheckUsernameAvail(uname,OnSucceeded);
+                }
+
+                function OnSucceeded(result) {
+                    if (result == 1) {
+                        $('#<%=username_availability_result.ClientID%>').html("Username available :)").removeClass("text-danger").addClass("text-success"); 
+                    }
+                    else if (result == 2) {
+                        $('#<%=username_availability_result.ClientID%>').html("Username already in use :(").removeClass("text-success").addClass("text-danger"); 
+                    }
+                }
+            })
+        });
     </script>
 </asp:Content>
 

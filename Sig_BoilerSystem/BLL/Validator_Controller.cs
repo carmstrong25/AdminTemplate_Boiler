@@ -20,11 +20,11 @@ namespace Sig_BoilerSystem.BLL
     {
         public gvar fillgvar (string value, string control)
         {
+            //Fills the Gvar and returns.
             gvar returnValue = new gvar();
             returnValue.Value = value;
             returnValue.Control = control;
-            returnValue.Success = false;
-       
+            returnValue.Success = false;     
             return returnValue;
         }
         public gvar Int(string value, string control)

@@ -11,6 +11,7 @@ using Sig_BoilerSystem.DAL.POCOs;
 using Sig_BoilerSystem.DAL.DTOs;
 using Sig_BoilerSystem.DAL;
 using Sig_BoilerSystem.BLL;
+using System.Web.Services;
 #endregion
 
 public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
@@ -191,5 +192,19 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
         hide_alertmsg.Text = msg; //msg will be Error + what ever you set this too.
         hide_alerttype.Text = alerttype; // notice(blue), warning(orange), success(Green) or error
         ScriptManager.RegisterStartupScript(this, GetType(), "noti", "noti();", true);       
+    }
+    [WebMethod]
+    public static int CheckUsernameAvail(string uname)
+    {
+        UserManagement_Controller ctrl = new UserManagement_Controller();
+        bool checkUser = ctrl.Check_Username_availability(uname);
+        if (checkUser == true)
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
     }
 }

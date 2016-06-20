@@ -21,6 +21,7 @@
         <!-- endbuild -->
           <!-- page stylesheets -->
           <link rel="stylesheet" href="/vendor/chosen_v1.4.0/chosen.min.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
           <!-- end page stylesheets -->
     </head>
     <body class="page-loading">
@@ -46,7 +47,7 @@
             <form runat="server">
 
             <!-- SM -->
-            <asp:ScriptManager runat="server">
+            <asp:ScriptManager runat="server" EnablePageMethods="true">
 
             </asp:ScriptManager>
             <!-- /SM -->
@@ -271,8 +272,11 @@
             <!-- page scripts -->
             <script src="/vendor/chosen_v1.4.0/chosen.jquery.min.js"></script>
             <script src="/vendor/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+            <script src="/vendor/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+
             <script src="/scripts/helpers/noty-defaults.js"></script>
             <script src="/scripts/ui/notifications.js"></script>
+            <script src="/scripts/forms/masks.js"></script>
             <!-- end initialize page scripts -->
         </form>
 
