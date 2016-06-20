@@ -153,13 +153,33 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
 
             if (failed != true)
             {
+                int Int = int.Parse(intValue.Value.ToString());
+                bool Bool = bool.Parse(boolValue.Value.ToString());
+                decimal Decimal = decimal.Parse(decimalValue.Value.ToString());
+                DateTime dateTime = DateTime.Parse(datetimeValue.Value.ToString());
+                int Range = int.Parse(rangeValue.Value.ToString());
+                string Lenght = lenghtValue.Value.ToString();
+                string Password = passwordValue.Value.ToString();
+                string Letters = lettersValue.Value.ToString();
+
+                lbl_int.Text = Int.ToString();
+                lbl_bool.Text = Bool.ToString();
+                lbl_decimal.Text = Decimal.ToString();
+                lbl_datetime.Text = dateTime.ToString();
+                lbl_range.Text = Range.ToString();
+                lbl_lenght.Text = Lenght.ToString();
+                lbl_password.Text = Password.ToString();
+                lbl_letters.Text = Letters.ToString();
+
                 //success call your BLL from here
                 //int invalue = int.parse(intValue);
                 //bool update = Controller.update(intvalue);
                 //and so on.
+                alerts("SUCCESS: All values match the validation.", "success");
             }
             else
             {
+                alerts("ERROR: One or more values does not match the required constraints.", "error");
                 //failed
             }
         }
@@ -167,5 +187,11 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
         {
             //catch
         }
+    }
+    protected void alerts(string msg, string alerttype)
+    {
+        hide_alertmsg.Text = msg; //msg will be Error + what ever you set this too.
+        hide_alerttype.Text = alerttype; // notice(blue), warning(orange), success(Green) or error
+        ScriptManager.RegisterStartupScript(this, GetType(), "noti", "noti();", true);       
     }
 }

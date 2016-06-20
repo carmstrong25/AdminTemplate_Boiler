@@ -12,11 +12,11 @@
     msgs = ['Your request has succeded!', 'Are you the six fingered man?', 'Inconceivable!', 'I do not think that means what you think it means.', 'Have fun storming the castle!'];
 
   $('.show-messenger').on('click', function () {
-    var msg = $('#message').val(),
-      type = $('#messenger-type').val().toLowerCase(),
-      position = $('#position').val();
+      var msg = $('#noty_message').val();
+      var type = $('#noty_type').val();
+      var position = $('#noty_position').val();
     if (!msg) {
-      msg = getMessage();
+      msg = 'NO ERROR';
     }
     if (!type) {
       type = 'error';
@@ -35,11 +35,4 @@
     });
   });
 
-  function getMessage() {
-    i++;
-    if (i === msgs.length) {
-      i = 0;
-    }
-    return msgs[i];
-  }
 })(jQuery);
