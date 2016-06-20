@@ -17,8 +17,9 @@ namespace Sig_BoilerSystem.BLL
 {
     public class UserManagement_Controller
     {
-        public bool AddNewUser(User newuser)
+        public gvar AddNewUser(User newuser)
         {
+            gvar returnValue = new gvar();
             try
             {
                 using (var context = new BoilerContext())
@@ -28,16 +29,18 @@ namespace Sig_BoilerSystem.BLL
                     
                     context.SaveChanges();
                 }
-                return true;
+                returnValue.Success = true;
             }
            catch(Exception e)
             {
-                //ALERT ("e.innerMSG")
-                return false;
+                returnValue.Message = e.Message.ToString();
+                returnValue.Success = false;
             }
+            return returnValue;
         }
-        public bool UpdateUser(User user)
+        public gvar UpdateUser(User user)
         {
+            gvar returnValue = new gvar();
             try
             {
                 using (var context = new BoilerContext())
@@ -50,14 +53,14 @@ namespace Sig_BoilerSystem.BLL
 
                     context.SaveChanges();
                 }
-                return true;
+                returnValue.Success = true;
             }
             catch (Exception e)
             {
-                //ALERT ("e.innerMSG")
-                return false;
+                returnValue.Message = e.Message.ToString();
+                returnValue.Success = false;
             }
+            return returnValue;
         }
-
     }
 }

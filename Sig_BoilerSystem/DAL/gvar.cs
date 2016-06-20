@@ -8,24 +8,9 @@ namespace Sig_BoilerSystem.DAL
 {
     public class gvar
     {
-        //1. INT
-        //2. BOOL
-        //3. DECIMAL
-        //4. DATETIME
-        //5. Required
-        //6. Range
-        //7. Lenght
-        //8.
-        //9.
-        //10.
-
         public object Value { get; set; }
-        public int ValidationType { get; set; }
-        public bool Validated { get; set; }
+        public bool Success { get; set; }
         public string Control { get; set; }
         public string Message { get; set; }
-        public int Param1 { get; set; }
-        public int Param2 { get; set; }
-        public string Param3 { get; set; }
     }
 }

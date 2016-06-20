@@ -33,98 +33,96 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             gvar datetimeValue = new gvar();
             gvar rangeValue = new gvar();
             gvar lenghtValue = new gvar();
-            gvar passwordValue = new gvar();
+            //gvar passwordValue = new gvar();
             gvar lettersValue = new gvar();
 
             #region txt_int
-            intValue = gval.validate(txt_int.Text, 5, "txt_int", 0, 0, ""); // Control.Text, ValidationType, ControlID, Param1(int), Param2(int), Param3(string)
+            intValue = gval.Required(txt_int.Text, "txt_int"); // Control.Text, ControlID
             allVars.Add(intValue);
-            if (intValue.Validated == true)
+            if (intValue.Success == true)
             {
-                intValue = gval.validate(txt_int.Text, 1, "txt_int", 0, 0, "");
+                intValue = gval.Int(txt_int.Text, "txt_int");
                 allVars.Add(intValue);
             }
             #endregion
 
             #region txt_bool
-            boolValue = gval.validate(txt_bool.Text, 5, "txt_bool", 0, 0, "");
+            boolValue = gval.Bool(txt_bool.Text, "txt_bool");
             allVars.Add(boolValue);
-            if (boolValue.Validated == true)
+            if (boolValue.Success == true)
             {
-                boolValue = gval.validate(txt_bool.Text, 2, "txt_bool", 0, 0, "");
+                boolValue = gval.Bool(txt_bool.Text, "txt_bool");
                 allVars.Add(boolValue);
             }
             #endregion
 
             #region txt_decimal
-            decimalValue = gval.validate(txt_decimal.Text, 5, "txt_decimal", 0, 0, "");
+            decimalValue = gval.Decimal(txt_decimal.Text, "txt_decimal");
             allVars.Add(decimalValue);
-            if (decimalValue.Validated == true)
+            if (decimalValue.Success == true)
             {
-                decimalValue = gval.validate(txt_decimal.Text, 3, "txt_decimal", 0, 0, "");
+                decimalValue = gval.Decimal(txt_decimal.Text, "txt_decimal");
                 allVars.Add(decimalValue);
             }
             #endregion
 
             #region txt_datetime
-            datetimeValue = gval.validate(txt_datetime.Text, 5, "txt_datetime", 0, 0, "");
+            datetimeValue = gval.Datetime(txt_datetime.Text, "txt_datetime");
             allVars.Add(datetimeValue);
-            if (datetimeValue.Validated == true)
+            if (datetimeValue.Success == true)
             {
-                datetimeValue = gval.validate(txt_datetime.Text, 4, "txt_datetime", 0, 0, "");
+                datetimeValue = gval.Datetime(txt_datetime.Text, "txt_datetime");
                 allVars.Add(datetimeValue);
             }
             #endregion
 
             #region txt_range
-            rangeValue = gval.validate(txt_range.Text, 5, "txt_range", 0, 0, "");
+            rangeValue = gval.Required(txt_range.Text, "txt_range");
             allVars.Add(rangeValue);
-            if (rangeValue.Validated == true)
+            if (rangeValue.Success == true)
             {
-                rangeValue = gval.validate(txt_range.Text, 1, "txt_range", 0, 0, "");
+                rangeValue = gval.Int(txt_range.Text, "txt_range");
                 allVars.Add(rangeValue);
             }
-            if (rangeValue.Validated == true)
+            if (rangeValue.Success == true)
             {
-                rangeValue = gval.validate(txt_range.Text, 6, "txt_range", 5, 10, "");
+                rangeValue = gval.Range(txt_range.Text, "txt_range", 5, 10);
                 allVars.Add(rangeValue);
             }
             #endregion
 
             #region txt_lenght
             //This one doesn't need to check if int.
-            lenghtValue = gval.validate(txt_lenght.Text, 5, "txt_lenght", 0, 0, ""); 
+            lenghtValue = gval.Required(txt_lenght.Text, "txt_lenght"); 
             allVars.Add(lenghtValue);
-            if (lenghtValue.Validated == true)
+            if (lenghtValue.Success == true)
             {
-                lenghtValue = gval.validate(txt_lenght.Text, 7, "txt_lenght", 5, 2, "");
+                lenghtValue = gval.Lenght(txt_lenght.Text, "txt_lenght", 5, 1); 
                 allVars.Add(lenghtValue);
             }
             #endregion
 
             #region txt_password
-            passwordValue = gval.validate(txt_password.Text, 5, "txt_password", 0, 0, "");
-            allVars.Add(passwordValue);
-            if(passwordValue.Validated == true)
-            {
-                passwordValue = gval.validate(txt_password_confrimation.Text, 5, "txt_password_confrimation", 0, 0, "");
-                allVars.Add(passwordValue);
-                if (passwordValue.Validated == true)
-                {
-                    passwordValue = gval.validate(txt_password.Text, 8, "txt_password", 2, 0, txt_password_confrimation.Text);
-                    allVars.Add(passwordValue);
-                }
-            }
-
-           
+            //passwordValue = gval.validate(txt_password.Text, 5, "txt_password", 0, 0, "");
+            //allVars.Add(passwordValue);
+            //if(passwordValue.Success == true)
+            //{
+            //    passwordValue = gval.validate(txt_password_confrimation.Text, 5, "txt_password_confrimation", 0, 0, "");
+            //    allVars.Add(passwordValue);
+            //    if (passwordValue.Success == true)
+            //    {
+            //        passwordValue = gval.validate(txt_password.Text, 8, "txt_password", 2, 0, txt_password_confrimation.Text);
+            //        allVars.Add(passwordValue);
+            //    }
+            //} 
             #endregion
 
             #region txt_letters
-            lettersValue = gval.validate(txt_letters.Text, 5, "txt_letters", 0, 0, "");
+            lettersValue = gval.Special(txt_letters.Text, "txt_letters");
             allVars.Add(lettersValue);
-            if (lettersValue.Validated == true)
+            if (lettersValue.Success == true)
             {
-                lettersValue = gval.validate(txt_letters.Text, 9, "txt_letters", 0, 0, "");
+                lettersValue = gval.Special(txt_letters.Text, "txt_letters");
                 allVars.Add(lettersValue);
             }
             #endregion
@@ -136,7 +134,7 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             {
                 TextBox tb = (TextBox)cph.FindControl(item.Control);
                 Label lb = (Label)cph.FindControl("val_" + item.Control);
-                if (item.Validated == false)
+                if (item.Success == false)
                 {
                     tb.CssClass = "form-control error";
                     lb.Text = item.Message;
@@ -159,7 +157,7 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
                 DateTime dateTime = DateTime.Parse(datetimeValue.Value.ToString());
                 int Range = int.Parse(rangeValue.Value.ToString());
                 string Lenght = lenghtValue.Value.ToString();
-                string Password = passwordValue.Value.ToString();
+                //string Password = passwordValue.Value.ToString();
                 string Letters = lettersValue.Value.ToString();
 
                 lbl_int.Text = Int.ToString();
@@ -168,7 +166,7 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
                 lbl_datetime.Text = dateTime.ToString();
                 lbl_range.Text = Range.ToString();
                 lbl_lenght.Text = Lenght.ToString();
-                lbl_password.Text = Password.ToString();
+                //lbl_password.Text = Password.ToString();
                 lbl_letters.Text = Letters.ToString();
 
                 //success call your BLL from here

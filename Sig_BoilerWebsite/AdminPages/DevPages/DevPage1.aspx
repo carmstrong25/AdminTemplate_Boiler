@@ -84,23 +84,23 @@
                                         <!-- Lenght -->
 
                                         <!-- Password -->
-                                        <div class="form-group">
+                                        <%--<div class="form-group">
                                             <label class="col-sm-2 control-label" >Password: </label>
                                             <div class="col-sm-10">
                                                 <asp:TextBox runat="server" CssClass="form-control" id="txt_password"  placeholder="Must match the password confirmation."/>
                                                 <asp:label runat="server" id="val_txt_password" class="help-block text-danger"></asp:label>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                         <!-- Password -->
 
                                         <!-- PasswordConfirmation -->
-                                        <div class="form-group">
+                                        <%--<div class="form-group">
                                             <label class="col-sm-2 control-label" >Password Confirmation: </label>
                                             <div class="col-sm-10">
                                                 <asp:TextBox runat="server" CssClass="form-control" id="txt_password_confrimation"  placeholder="Must match the password."/>
                                                 <asp:label runat="server" id="val_txt_password_confrimation" class="help-block text-danger"></asp:label>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                         <!-- PasswordConfirmation -->
 
                                         <!-- Letters -->
@@ -190,14 +190,14 @@
                                             </div>
                                         </div>
                                         <!-- Lenght -->
-                                        <br />
+
                                         <!-- Password -->
-                                        <div class="form-group">
+                                        <%--<div class="form-group">
                                             <label class="col-sm-2 control-label" >Password: </label>
                                             <div class="col-sm-10">
                                                 <asp:label runat="server" id="lbl_password" class="text-danger"></asp:label>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                         <!-- Password -->
                                         <br />
                                         <!-- Letters -->
