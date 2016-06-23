@@ -87,7 +87,7 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             }
             if (rangeValue.Success == true)
             {
-                rangeValue = gval.Range(txt_range.Text, "txt_range", 5, 10);
+                rangeValue = gval.RangeInt(txt_range.Text, "txt_range", 5, 10);
                 allVars.Add(rangeValue);
             }
             #endregion

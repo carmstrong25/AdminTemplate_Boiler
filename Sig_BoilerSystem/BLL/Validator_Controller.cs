@@ -106,7 +106,23 @@ namespace Sig_BoilerSystem.BLL
             }
             return returnValue;
         }
-        public gvar Range(string value, string control, int smallValue, int bigValue)
+        public gvar RangeString(string value, string control, int smallValue, int bigValue)
+        {
+            gvar returnValue = new gvar();
+            returnValue = fillgvar(value, control);
+            int val = value.Count();
+            string error = string.Format("This field does not meet the range contraints. Must be between {0} and {1} characters long.", smallValue, bigValue);
+            if (val >= smallValue && val <= bigValue)
+            {
+                returnValue.Success = true;
+            }
+            if (returnValue.Success == false)
+            {
+                returnValue.Message = error;
+            }
+            return returnValue;
+        }
+        public gvar RangeInt(string value, string control, int smallValue, int bigValue)
         {
             gvar returnValue = new gvar();
             returnValue = fillgvar(value, control);
