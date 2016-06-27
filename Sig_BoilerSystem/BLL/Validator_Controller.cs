@@ -211,5 +211,74 @@ namespace Sig_BoilerSystem.BLL
             }
             return returnValue;
         }
+        public gvar PasswordCharacters(string value, string control)
+        {
+            gvar returnValue = new gvar();
+            returnValue = fillgvar(value, control);
+            Regex regexPassword = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}");
+            bool testBool = regexPassword.IsMatch(returnValue.Value.ToString());
+            string error = "Password must contain: Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase Alphabet, 1 Number and 1 Special Character";
+            if (testBool == true)
+            {
+                returnValue.Success = true;
+            }
+            if (returnValue.Success == false)
+            {
+                returnValue.Message = error;
+            }
+            return returnValue;
+        }
+        public gvar PasswordCompare(string value, string control, string compareValue)
+        {
+            //compareValue: The item to compare to
+            gvar returnValue = new gvar();
+            returnValue = fillgvar(value, control);
+            string error = "The password and the confirmation do no match.";
+            if (returnValue.Value.ToString() == compareValue)
+            {
+                returnValue.Success = true;
+            }
+            if (returnValue.Success == false)
+            {
+                returnValue.Message = error;
+            }
+            return returnValue;
+        }
+        public gvar Phone(string value, string control)
+        {
+            gvar returnValue = new gvar();
+            returnValue = fillgvar(value, control);
+
+            Regex regexPhoneNumber = new Regex(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
+            bool testBool = regexPhoneNumber.IsMatch(returnValue.Value.ToString());
+            string error = "Phone Numbers must match: (123) 123-1234";
+            if (testBool == true)
+            {
+                returnValue.Success = true;
+            }
+            if (returnValue.Success == false)
+            {
+                returnValue.Message = error;
+            }
+            return returnValue;
+        }
+        public gvar Email(string value, string control)
+        {
+            gvar returnValue = new gvar();
+            returnValue = fillgvar(value, control);
+            Regex regexEmail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+
+            bool testBool = regexEmail.IsMatch(returnValue.Value.ToString());
+            string error = "Emails must match: john.doe@jdoe.com";
+            if (testBool == true)
+            {
+                returnValue.Success = true;
+            }
+            if (returnValue.Success == false)
+            {
+                returnValue.Message = error;
+            }
+            return returnValue;
+        }
     }
 }

@@ -86,31 +86,11 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label" >Lenght: </label>
                                             <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_lenght"  placeholder="Must be between less than 5 characters."/>
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_lenght"  placeholder="Must be less than 5 characters."/>
                                                 <asp:label runat="server" id="val_txt_lenght" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
                                         <!-- Lenght -->
-
-                                        <!-- Password -->
-                                        <%--<div class="form-group">
-                                            <label class="col-sm-2 control-label" >Password: </label>
-                                            <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_password"  placeholder="Must match the password confirmation."/>
-                                                <asp:label runat="server" id="val_txt_password" class="help-block text-danger"></asp:label>
-                                            </div>
-                                        </div>--%>
-                                        <!-- Password -->
-
-                                        <!-- PasswordConfirmation -->
-                                        <%--<div class="form-group">
-                                            <label class="col-sm-2 control-label" >Password Confirmation: </label>
-                                            <div class="col-sm-10">
-                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_password_confrimation"  placeholder="Must match the password."/>
-                                                <asp:label runat="server" id="val_txt_password_confrimation" class="help-block text-danger"></asp:label>
-                                            </div>
-                                        </div>--%>
-                                        <!-- PasswordConfirmation -->
 
                                         <!-- Letters -->
                                         <div class="form-group">
@@ -122,7 +102,7 @@
                                         </div>
                                         <!-- Letters -->
 
-                                        <!-- Letters -->
+                                        <!-- Phone -->
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label" >Phone Number: </label>
                                             <div class="col-sm-10">
@@ -130,7 +110,37 @@
                                                 <asp:label runat="server" id="val_txt_phone" class="help-block text-danger"></asp:label>
                                             </div>
                                         </div>
-                                        <!-- Letters -->
+                                        <!-- Phone -->
+
+                                        <!-- Email -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Email: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_email" placeholder="john.doe@jdoe.com"/>
+                                                <asp:label runat="server" id="val_txt_email" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- Email -->
+
+                                        <!-- Password -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Password: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_password" />
+                                                <asp:label runat="server" id="val_txt_password" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- Password -->
+
+                                        <!-- Password Confirmation -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" >Password Confirmation: </label>
+                                            <div class="col-sm-10">
+                                                <asp:TextBox runat="server" CssClass="form-control" id="txt_passwordconfirmation" />
+                                                <asp:label runat="server" id="val_txt_passwordconfirmation" class="help-block text-danger"></asp:label>
+                                            </div>
+                                        </div>
+                                        <!-- Password Confirmation -->
 
                                         <asp:Button runat="server" CssClass="btn btn-dark pull-right show-mess" ID="btn_submit" OnClick="btn_submit_Click" Text="GO GO GO!"/>
                                        

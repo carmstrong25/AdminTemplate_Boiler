@@ -34,8 +34,13 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             gvar datetimeValue = new gvar();
             gvar rangeValue = new gvar();
             gvar lenghtValue = new gvar();
-            //gvar passwordValue = new gvar();
             gvar lettersValue = new gvar();
+            gvar phoneValue = new gvar();
+            gvar emailValue = new gvar();
+            gvar passwordValue = new gvar();
+            gvar passwordConfirmationValue = new gvar();
+
+            string test = txt_phone.Text;
 
             #region txt_int
             intValue = gval.Required(txt_int.Text, "txt_int"); // Control.Text, ControlID
@@ -125,6 +130,45 @@ public partial class AdminPages_DevPages_DevPage1 : System.Web.UI.Page
             {
                 lettersValue = gval.Special(txt_letters.Text, "txt_letters");
                 allVars.Add(lettersValue);
+            }
+            #endregion
+
+            #region txt_phone
+            phoneValue = gval.Required(txt_phone.Text, "txt_phone");
+            allVars.Add(phoneValue);
+            if (phoneValue.Success == true)
+            {
+                phoneValue = gval.Phone(txt_phone.Text, "txt_phone");
+                allVars.Add(phoneValue);
+            }
+            #endregion
+
+            #region txt_email
+            emailValue = gval.Email(txt_email.Text, "txt_email");
+            allVars.Add(emailValue);
+            if (emailValue.Success == true)
+            {
+                emailValue = gval.Email(txt_email.Text, "txt_email");
+                allVars.Add(emailValue);
+            }
+            #endregion
+
+            #region txt_password
+            passwordValue = gval.Required(txt_password.Text, "txt_password");//Password required
+            allVars.Add(passwordValue);
+
+            passwordConfirmationValue = gval.Required(txt_passwordconfirmation.Text, "txt_passwordconfirmation");//Password Confirmation required
+            allVars.Add(passwordConfirmationValue);
+
+            if (passwordValue.Success == true && passwordConfirmationValue.Success == true) //Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase Alphabet, 1 Number and 1 Special Character
+            {
+                passwordValue = gval.PasswordCharacters(txt_password.Text, "txt_password");
+                allVars.Add(passwordValue);
+            }
+            if (passwordValue.Success == true) // Password and Confirmation match
+            {
+                passwordValue = gval.PasswordCompare(txt_password.Text, "txt_password", txt_passwordconfirmation.Text);
+                allVars.Add(passwordValue);
             }
             #endregion
 
